@@ -1,89 +1,178 @@
-html{
-	height: 100%;
-}
-body {
-	 background: linear-gradient(to right, red , yellow);
-	 height: 100vh;	 
+@import url("https://fonts.googleapis.com/css?family=Creepster"); /* Imports a creepy webfont from google fonts*/
+
+body{
+	background-color: #f7a325;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin-bottom: 60px;
+	animation: body-background-animation 30s linear infinite;
 }
 
+main {
+  flex: 1;
+  justify-content: center;
+}
+
+.jumbotron {
+background-color: #f29810;
+animation: jumbotron-background-animation 30s linear infinite;
+}
 .jumbotron p {
-	margin-top: 20%;
-	font-size: 18px;
+  margin-top: 20%;
+  font-size: 12px;
 }
-
-/* Medium Devices/Desktops */
-@media only screen and (min-width : 992px) {
-	.jumbotron h2 {
-		font-size: 4em;
-	}
-	.jumbotron h1 {
-		font-size: 6em;
-	}
-}
-
-/* Large Devices/Wide Screens */
-@media only screen and (min-width : 1200px) {
-	.jumbotron h2 {
-		font-size: 4em;
-	}
-	.jumbotron h1 {
-		font-size: 6em;
-	}
-}
-
 a {
+  text-decoration: underline;
+  color: black;
+  background: transparent;
+}
+
+svg#illustration {
+  margin: 2rem;
+  width: 15rem;
+}
+
+p {
+	font-size: 12px;
+}
+
+ a {
 	text-decoration: underline;
 	color: black;
 }
 
-h1 {
-	font-family: 'Creepster', cursive;
+.footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
 }
 
-h2, p {
-	font-family: 'Oswald', sans-serif;
+.konami {
+  background: #000 url("https://i.ytimg.com/vi/v4zU8Is-lDY/maxresdefault.jpg");
+  color: #ada48f;
 }
 
-h1 {
-	text-shadow: 2px 2px #ff6600;
+#spooky {
+  font-family: "Creepster";
 }
 
-h2 {
-	text-shadow: 1px 1px #ff6600;
+@media only screen and (max-width: 768px) {
+  body,
+  html {
+   /* overflow: hidden; */
+  }
+  h1 {
+    font-size: 20vw;
+    word-spacing: 2rem;
+  }
 }
 
-.night-button{
-	background: transparent;
-	padding: 10px 20px;
-	font-family: 'Oswald', sans-serif;
-	border: solid 2px black;	
+@media screen and (min-width: 375px) {
+	#spooky {
+		font-size: 78px;
+	}
 }
 
-.night-button:focus {
-	outline: 0;	
-}
-.night-button: hover {
-	background-color: rgba(255,255,255,0.4);	
-}
-
-p.text-center {
-	font-size: 13pt;
+@media screen and (min-width: 414px) {
+	#spooky {
+		font-size: 88px;
+	}
 }
 
-#splashText {
-	font-size: 40px;
+@media screen and (min-width: 768px) {
+	#spooky {
+		font-size: 134px;
+	}
+	.jumbotron p {
+		font-size: 20px;
+	}
 }
 
-.text-large {
-	font-size: 40px !important;
+#spooky-ghost-wrapper {
+	right:20vw;
+	position: absolute;
+	width: 50px;
+	height: 50px;
 }
 
-* {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+#spooky-ghost {
+	width: 100%;
+	height: auto;
+	display: none;
+}
+#spooky-ghost-wrapper:hover #spooky-ghost{
+	display: block;
+}
+
+/* Costume picker styles */
+
+#outerCostumeBox {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	font-size: 50px;
+  }
+
+  #costumeButton {
+	background-color: transparent;
+	border: none;
+  }
+
+  #costumeContent {
+	text-align: center;
+  }
+
+	/* Adjust font size with screen size */
+	@media screen and (max-width: 768px) {
+		#outerCostumeBox {
+			font-size: 25px;
+		}
+	}
+
+
+@keyframes body-background-animation {
+	0% {
+		background-color: #f7a325;
+	}
+	20% {
+		background-color: #f7252f;
+	}
+	35% {
+		background-color: #f7252f;
+	}
+	36% {
+		background-color: #3d25f7;
+	}
+	64% {
+		background-color: #3d25f7;
+	}
+	65% {
+		background-color: #f7252f;
+	}
+	80% {
+		background-color: #f7252f;
+	}
+	100% {
+		background-color: #f7a325;
+	}
+}
+
+@keyframes jumbotron-background-animation {
+	0% {
+		background-color: #f29810;
+	}
+	35% {
+		background-color: #72f210;
+	}
+	65% {
+		background-color: #72f210;
+	}
+	100% {
+		background-color: #f29810;
+	}
 }
